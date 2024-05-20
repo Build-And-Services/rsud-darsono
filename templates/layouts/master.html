@@ -14,7 +14,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Dashboard - Analytics | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <title>Dashboard - Analytics</title>
 
     <meta name="description" content="" />
 
@@ -40,6 +40,45 @@
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="/static/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
     <link rel="stylesheet" href="/static/assets/vendor/libs/apex-charts/apex-charts.css" />
+    <style>
+
+      .menu-item:not(.actives) .menu-link:hover{
+        background-color: transparent !important;
+      }
+      .menu-item.actives .menu-link{
+        background-color: white;
+        color: #9CBEE4;
+        margin-left: 1rem;
+        margin-right: 0rem !important;
+        border-top-left-radius: 0.375rem !important;
+        border-bottom-left-radius: 0.375rem !important;
+        border-top-right-radius: 0rem !important;
+        border-bottom-right-radius: 0rem !important;
+      }
+
+      .menu-item.actives .menu-link::after{
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        left: auto;
+        right: -8px;
+        bottom: -30px;
+        border: 20px solid;
+        border-color: #fff #fff transparent transparent;
+      }
+      .menu-item.actives .menu-link::before{
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        left: auto;
+        right: -8px;
+        top: -30px;
+        border: 20px solid;
+        border-color:  transparent #fff #fff transparent ;
+      }
+    </style>
 
     <!-- Page CSS -->
 
@@ -73,7 +112,7 @@
 
           <!-- <div class="menu-inner-shadow"></div> -->
 
-          <ul class="menu-inner py-1">
+          <ul class="menu-inner py-1 pt-5">
             <!-- Dashboard -->
             <li class="menu-item">
               <a href="/" class="menu-link">
@@ -81,7 +120,7 @@
                 <div data-i18n="Analytics">Dashboard</div>
               </a>
             </li>
-            <li class="menu-item">
+            <li class="menu-item actives">
               <a href="/verifikasi" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Verifikasi</div>
@@ -223,24 +262,7 @@
                   , made with ❤️ by
                   <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
                 </div>
-                <div>
-                  <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
-                  <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
-
-                  <a
-                    href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
-                    target="_blank"
-                    class="footer-link me-4"
-                    >Documentation</a
-                  >
-
-                  <a
-                    href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
-                    target="_blank"
-                    class="footer-link me-4"
-                    >Support</a
-                  >
-                </div>
+       
               </div>
             </footer>
             <!-- / Footer -->
@@ -257,14 +279,6 @@
     </div>
     <!-- / Layout wrapper -->
 
-    <div class="buy-now">
-      <a
-        href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/"
-        target="_blank"
-        class="btn btn-danger btn-buy-now"
-        >Upgrade to Pro</a
-      >
-    </div>
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
