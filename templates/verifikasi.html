@@ -1,15 +1,63 @@
-{% extends 'layouts/master.html' %}
+{% extends 'layouts/master.html' %} {% block content %}
 
-{% block content %}
-  <form method="post">
-    <label for="username">Username</label>
-    <input name="username" id="username" required>
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password" required>
-    <input type="submit" value="Register">
-    <input type="submit" value="Register">
-    <input type="submit" value="Register">
-    <input type="submit" value="Register">
-    <input type="submit" value="Register">
-  </form>
+<div class="container-xxl flex-grow-1 container-p-y">
+
+  <div class="row justify-content-center">
+    <div class="col-12 card">
+      <div class="card-header">
+        <h2 class="text-uppercase">Verifikasi Pengusulan Barang</h2>
+      </div>
+      <div class="card-body overflow-auto">
+
+        <table
+          id="pengusulan"
+          class="display"
+          style="width: 100%"
+        >
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Tanggal</th>
+              <th>Ruangan</th>
+              <th>Nama Barang</th>
+              <th>Jumlah</th>
+              <th>Satuan</th>
+              <th>Permintaan</th>
+              <th>Status</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for product in data %}
+            <tr>
+              <td>{{product["no"]}}</td>
+              <td>{{product["tanggal"]}}</td>
+              <td>{{product["ruangan"]}}</td>
+              <td>{{product["nama_barang"]}}</td>
+              <td>{{product["jumlah"]}}</td>
+              <td>{{product["satuan"]}}</td>
+              <td>{{product["permintaan"]}}</td>
+              <td>
+                <span class="btn btn-danger rounded-pill">✖️</span>
+                <span class="btn btn-success rounded-pill">✔️</span>
+              </td>
+              <td><span class="btn btn-primary rounded-pill">Detail</span></td>
+            </tr>
+            {% endfor %}
+
+          </tbody>
+            
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %} 
+
+{% block scripts %}
+<script>
+  $('#pengusulan').DataTable();
+</script>
 {% endblock %}
