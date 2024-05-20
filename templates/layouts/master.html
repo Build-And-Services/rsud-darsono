@@ -116,20 +116,28 @@
 
           <ul class="menu-inner py-1 pt-5">
             <!-- Dashboard -->
-            <li class="menu-item">
+            {%if menu == 'home'%}
+            <li class="menu-item actives">
+              {%else%}
+              <li class="menu-item">
+                {% endif %}
               <a href="/" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
               </a>
             </li>
-            <li class="menu-item actives">
+            {%if menu == 'verifikasi'%}
+              <li class="menu-item actives">
+              {%else%}
+              <li class="menu-item">
+                {% endif %}
               <a href="/verifikasi" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Verifikasi</div>
               </a>
             </li>
             <li class="menu-item">
-              <a href="index.html" class="menu-link">
+              <a href="/" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Logout</div>
               </a>

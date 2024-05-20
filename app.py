@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-  return render_template('dashboard.html')
+  return render_template('dashboard.html', menu = 'home')
 
 @app.route("/verifikasi")
 def verifikasi():
@@ -41,7 +41,7 @@ def verifikasi():
         "satuan": "pcs",
         "permintaan": 1,
     }]
-   return render_template('verifikasi.html', data = data)
+   return render_template('verifikasi.html', data = data, menu = 'verifikasi')
 
 if __name__ == "__main__": 
     app.run(debug=True)
