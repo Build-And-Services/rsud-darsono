@@ -38,10 +38,18 @@
               <td>{{product["satuan"]}}</td>
               <td>{{product["permintaan"]}}</td>
               <td>
-                <span class="btn btn-danger rounded-pill">✖️</span>
-                <span class="btn btn-success rounded-pill">✔️</span>
+                <button type="button" class="btn btn-danger rounded-pill" data-bs-toggle="modal" data-bs-target="#rejectModal">
+                  ✖️
+                </button>
+                <button type="button" class="btn btn-success rounded-pill" data-bs-toggle="modal" data-bs-target="#accModal">
+                  ✔️
+                </button>
               </td>
-              <td><span class="btn btn-primary rounded-pill">Detail</span></td>
+              <td>
+                <a href="/verifikasi-detail">
+                  <span class="btn btn-primary rounded-pill">Detail</span>
+                </a>
+              </td>
             </tr>
             {% endfor %}
 

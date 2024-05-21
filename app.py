@@ -43,5 +43,9 @@ def verifikasi():
     }]
    return render_template('verifikasi.html', data = data, menu = 'verifikasi')
 
+@app.route("/verifikasi-detail")
+def verifikasiDetail():
+  return render_template('verifikasi-detail.html', menu = 'verifikasi')
+
 if __name__ == "__main__": 
     app.run(debug=True)
