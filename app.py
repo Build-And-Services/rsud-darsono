@@ -49,7 +49,39 @@ def verifikasiDetail():
 
 @app.route("/transaksi")
 def transaksi():
-   return render_template('transaksi.html', menu="transaksi")
+   data = [
+      {
+      "no":1,
+      "tanggal": "23 Februari 2024",
+      "status": "Selesai",
+      "ruangan": "Ruangan A",
+   },
+      {
+      "no":2,
+      "tanggal": "22 Februari 2024",
+      "status": "Proses",
+      "ruangan": "Ruangan B",
+   },
+      {
+      "no":3,
+      "tanggal": "24 Februari 2024",
+      "status": "Selesai",
+      "ruangan": "Ruangan C",
+   },
+      {
+      "no":4,
+      "tanggal": "27 Februari 2024",
+      "status": "Selesai",
+      "ruangan": "Ruangan B",
+   },
+      {
+      "no":5,
+      "tanggal": "25 Februari 2024",
+      "status": "Proses",
+      "ruangan": "Ruangan D",
+   },
+   ]
+   return render_template('transaksi.html',data=data, menu="transaksi")
 
 if __name__ == "__main__": 
     app.run(debug=True)
