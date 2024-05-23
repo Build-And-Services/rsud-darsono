@@ -1,0 +1,130 @@
+{% extends 'layouts/master.html' %} 
+
+{% block content %}
+
+<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="row justify-content-center">
+        <div class="col-12 card">
+            <div class="card-header">
+                <h3>Status Barang</h3>
+            </div>
+            <div class="card-body">
+                <form class="row justify-content-center mb-2">
+                    <div class="mb-4 col-md-6">
+                        <div class="form-group row">
+                            <label for="tglstart" class="col-sm-3 col-form-label">Tanggal Mulai</label>
+                            <div class="col-sm-9">
+                              <input type="date" class="form-control" id="tglstart">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-4 col-md-6">
+                        <div class="form-group row">
+                            <label for="tglend" class="col-sm-3 col-form-label">Tanggal Selesai</label>
+                            <div class="col-sm-9">
+                              <input type="date" class="form-control" id="tglend">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-4 col-md-12">
+                        <div class="form-group row">
+                            <label for="tglend" class="col-sm-2 col-form-label text-center">Status</label>
+                            <div class="col-sm-8">
+                                <select class="form-control" id="tglend">
+                                    <option value="proses">Proses</option>
+                                    <option value="proses">Selesai</option>
+                                    <option value="proses">Batal</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <table class="table" id="tblstatus">
+                    <thead class="tex-center">
+                        <tr>
+                            <th>No.</th>
+                            <th>Tanggal</th>
+                            <th>Status</th>
+                            <th>Keterangan</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1.</td>
+                            <td>23 Februari 2024</td>
+                            <td>
+                                <span class="badge badge-warning" style="background-color: yellow;">Prosess</span>
+                            </td>
+                            <td>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td>Diminta</td>
+                                            <td class="px-2">:</td>
+                                            <td>9</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Diterima</td>
+                                            <td class="px-2">:</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Belum di Terima</td>
+                                            <td class="px-2">:</td>
+                                            <td>9</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                            <td>
+                                <a href="#" class="badge badge-primary" style="background-color: #9CBEE4;">Detail</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2.</td>
+                            <td>20 Februari 2024</td>
+                            <td>
+                                <span class="badge badge-warning" style="background-color: yellow;">Prosess</span>
+                            </td>
+                            <td>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td>Diminta</td>
+                                            <td class="px-2">:</td>
+                                            <td>7</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Diterima</td>
+                                            <td class="px-2">:</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Belum di Terima</td>
+                                            <td class="px-2">:</td>
+                                            <td>7</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                            <td>
+                                <a href="#" class="badge badge-primary" style="background-color: #9CBEE4;">Detail</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
+
+
+{% block scripts %}
+<script>
+  new DataTable('#tblstatus', {
+    searching: false
+});
+</script>
+{% endblock %}

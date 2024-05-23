@@ -156,6 +156,16 @@
                 <div data-i18n="Analytics">Pengusulan</div>
               </a>
             </li>
+            {%if menu == 'status'%}
+            <li class="menu-item actives">
+              {%else%}
+              <li class="menu-item">
+                {% endif %}
+              <a href="/status" class="menu-link">
+                <i class='menu-icon tf-icons bx bx-home-circle'></i>
+                <div data-i18n="Analytics">Status</div>
+              </a>
+            </li>
             {%if menu == 'verifikasi'%}
               <li class="menu-item actives">
               {%else%}
