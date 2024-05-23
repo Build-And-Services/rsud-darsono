@@ -4,7 +4,34 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-  return render_template('dashboard.html', menu = 'home')
+  data = [
+      {
+      "no":1,
+      "tanggal": "23 Februari 2024",
+      "status": "Proses",
+      "keterangan": "Diminta: 9",
+      },
+         {
+         "no":2,
+         "tanggal": "22 Februari 2024",
+         "status": "Diterima",
+         "keterangan": "Diminta: 6",
+      },
+         {
+         "no":3,
+         "tanggal": "24 Februari 2024",
+         "status": "Ditolak",
+         "keterangan": "Diminta: 7",
+      },
+         {
+         "no":4,
+         "tanggal": "27 Februari 2024",
+         "status": "Diterima",
+         "keterangan": "Diminta: 7",
+      },
+   ]
+   
+  return render_template('dashboard.html', data=data, menu = 'home')
 
 @app.route("/verifikasi")
 def verifikasi():
