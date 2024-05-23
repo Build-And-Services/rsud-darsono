@@ -6,65 +6,107 @@
     <div class="card-header">
       <h2 class="text-uppercase">Form Pengajuan Barang</h2>
     </div>
-    <div class="card mb-4">
-      <div class="card-body">
-        <div class="mb-3 row">
-          <label for="html5-text-input" class="col-md-2 col-form-label">Ruang</label>
-          <div class="col-md-10">
-            <input class="form-control" type="text" placeholder="Ruangan A" id="html5-text-input"/>
-          </div>
+    <div class="col-xl">
+      <div class="card mb-4">
+        <div class="card-body">
+          <form>
+            <div class="mb-3">
+              <label class="form-label" for="basic-default-fullname">Tanggal</label>
+              <input type="date" class="form-control" id="basic-default-fullname"/>
+            </div>
+            <div class="row align-items-center">
+              <div class="col">
+                <div class="mb-3">
+                  <label class="form-label" for="basic-default-company">Nama</label>
+                  <input type="text" class="form-control" id="basic-default-company" />
+                </div>
+              </div>
+              <div class="col">
+                <div class="mb-3">
+                  <label class="form-label" for="basic-default-company">Jumlah</label>
+                  <input type="text" class="form-control" id="basic-default-company" />
+                </div>
+              </div>
+              <div class="col-1 mt-3 me-4">
+                <button type="submit" class="d-flex align-items-center btn text-white" style="background-color:#9CBEE4;">
+                  <i class="bx bx-plus"></i>
+                  Create</button>
+              </div>
+            </div>
+          </form>
         </div>
-        <div class="mb-3 row">
-          <label for="html5-date-input" class="col-md-2 col-form-label">Tanggal Pengajuan</label>
-          <div class="col-md-10">
-            <input class="form-control" type="date" id="html5-date-input" />
-          </div>
-        </div>
-        <div class="mb-3 row">
-          <label for="html5-date-input" class="col-md-2 col-form-label">Tanggal Penerimaan</label>
-          <div class="col-md-10">
-            <input class="form-control" type="date" id="html5-date-input" />
+        <div class="card-body table-responsive text-nowrap">
+          <table id="pengajuan-barang"
+          class="display"
+          style="width: 100%">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama Barang</th>
+                <th>Satuan</th>
+                <th class="text-center">Permintaan</th>
+                <th class="text-center">Aksi</th>
+              </tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+              <tr>
+                <td>1</td>
+                <td>TV</td>
+                <td>pcs</td>
+                <td class="text-center">5</td>
+                <td class="text-center">
+                  <button type="button" class="btn btn-warning rounded-pill" data-bs-toggle="modal" data-bs-target="#editPengajuanBarang">
+                    <i class="bx bx-edit"></i>
+                  </button>
+                  <button type="button" class="btn btn-danger rounded-pill" data-bs-toggle="modal" data-bs-target="#deleteModalPengajuan">
+                    <i class="bx bx-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>AC</td>
+                <td>pcs</td>
+                <td class="text-center">10</td>
+                <td class="text-center">
+                  <button type="button" class="btn btn-warning rounded-pill" data-bs-toggle="modal" data-bs-target="#editPengajuanBarang">
+                    <i class="bx bx-edit"></i>
+                  </button>
+                  <button type="button" class="btn btn-danger rounded-pill" data-bs-toggle="modal" data-bs-target="#deleteModalPengajuan">
+                    <i class="bx bx-trash"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="col float-end" style="margin-top: 150px;">
+            <button type="button" class="btn btn-danger rounded" data-bs-toggle="modal" data-bs-target="#rejectModal">
+              Reset
+            </button>
+            <button type="button" class="btn rounded text-white" data-bs-toggle="modal" data-bs-target="#accModal" style="background-color: #9CBEE4;">
+              Submit
+            </button>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="row justify-content-center">
+  <!-- <div class="row justify-content-center">
     <div class="col-12 card">
-      <div class="card-body table-responsive text-nowrap">
-        <table class="table" style="width: 100%">
-          <thead>
-            <tr>
-              <th>No</th>
-              <th>Nama Barang</th>
-              <th>Volume</th>
-              <th>Type/Merk</th>
-              <th>Jumlah</th>
-              <th>Keterangan</th>
-            </tr>
-          </thead>
-          <tbody class="table-border-bottom-0">
-            <tr>
-              <td>1</td>
-              <td>TV</td>
-              <td>pcs</td>
-              <td>Polytron</td>
-              <td>1</td>
-              <td>-</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>AC</td>
-              <td>pcs</td>
-              <td>Panasonic</td>
-              <td>5</td>
-              <td>-</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      
     </div>
-  </div>
+  </div> -->
 </div>
 
+{% endblock %}
+
+{% block scripts %}
+<script>
+$(document).ready(function() {
+    $('#pengajuan-barang').DataTable( {
+        "paging":   false,
+        "ordering": false,
+        "info":     false
+    } );
+} );</script>
 {% endblock %}
