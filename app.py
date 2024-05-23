@@ -87,5 +87,9 @@ def transaksi():
 def pengajuanBarang():
   return render_template('pengajuan-barang.html', menu = 'pengajuan-barang')
 
+@app.route("/status")
+def status():
+   return render_template('status.html', menu="status")
+
 if __name__ == "__main__": 
     app.run(debug=True)
