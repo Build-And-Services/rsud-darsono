@@ -96,40 +96,42 @@
           </button>
         </div>
 
-        <table
-          id="pengusulan"
-          class="display"
-          style="width: 100%"
-        >
-          <thead>
-            <tr>
-              <th class="text-start">No</th>
-              <th>Tanggal</th>
-              <th>Status</th>
-              <th>Ruangan</th>
-              <th>Aksi</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for item in data %}
-            <tr>
-              <td class="text-center">{{item["no"]}}</td>
-              <td>{{item["tanggal"]}}</td>
-              <td>{%if item["status"] == 'Selesai'%}
-                <span class="btn btn-sm btn-success rounded-3" style="min-width: 5rem;">{{item["status"]}}</span>
-                {%else%}
-                <span class="btn btn-sm btn-warning rounded-3" style="min-width: 5rem;">{{item["status"]}}</span>
-                  {% endif %}
-              <td>{{item["ruangan"]}}</td>
-              <td>
-                <a href="/verifikasi-detail">
-                  <span class="btn btn-sm btn-primary rounded-3 px-4">Detail</span>
-                </a>
-              </td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
+        <div class="table-responsive">
+          <table
+            id="pengusulan"
+            class="display"
+            style="width: 100%"
+          >
+            <thead>
+              <tr>
+                <th class="text-start">No</th>
+                <th>Tanggal</th>
+                <th>Status</th>
+                <th>Ruangan</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for item in data %}
+              <tr>
+                <td class="text-center">{{item["no"]}}</td>
+                <td>{{item["tanggal"]}}</td>
+                <td>{%if item["status"] == 'Selesai'%}
+                  <span class="btn btn-sm btn-success rounded-3" style="min-width: 5rem;">{{item["status"]}}</span>
+                  {%else%}
+                  <span class="btn btn-sm btn-warning rounded-3" style="min-width: 5rem;">{{item["status"]}}</span>
+                    {% endif %}
+                <td>{{item["ruangan"]}}</td>
+                <td>
+                  <a href="/verifikasi-detail">
+                    <span class="btn btn-sm btn-primary rounded-3 px-4">Detail</span>
+                  </a>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
