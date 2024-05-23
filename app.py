@@ -82,6 +82,10 @@ def transaksi():
    },
    ]
    return render_template('transaksi.html',data=data, menu="transaksi")
+   
+@app.route("/pengajuan-barang")
+def pengajuanBarang():
+  return render_template('pengajuan-barang.html', menu = 'pengajuan-barang')
 
 if __name__ == "__main__": 
     app.run(debug=True)
