@@ -126,7 +126,7 @@
                 <div data-i18n="Analytics">Dashboard</div>
               </a>
             </li>
-            {%if menu == 'home'%}
+            {%if menu == ''%}
             <li class="menu-item actives">
               {%else%}
               <li class="menu-item">
@@ -136,17 +136,17 @@
                 <div data-i18n="Analytics">Stock</div>
               </a>
             </li>
-            {%if menu == 'home'%}
+            {%if menu == 'pengajuan-barang'%}
             <li class="menu-item actives">
               {%else%}
               <li class="menu-item">
                 {% endif %}
-              <a href="/" class="menu-link">
+              <a href="/pengajuan-barang" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Pengajuan</div>
               </a>
             </li>
-            {%if menu == 'home'%}
+            {%if menu == ''%}
             <li class="menu-item actives">
               {%else%}
               <li class="menu-item">
@@ -256,7 +256,7 @@
               </div>
             </div>
             <!-- Modal Reject-->
-            <!-- Modal Reject -->
+            <!-- Modal Acc -->
             <div class="modal fade" id="accModal" tabindex="-1" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
@@ -286,7 +286,72 @@
                 </div>
               </div>
             </div>
-            <!-- Modal Reject-->
+            <!-- Modal Acc-->
+
+            <!-- Modal Pengajuan -->
+            <div class="modal fade" id="editPengajuanBarang" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel1">Edit Form Pengajuan Barang</h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="col mb-3">
+                      <label for="nameBasic" class="form-label">Nama Barang</label>
+                      <input type="text" id="nameBasic" class="form-control" placeholder="" />
+                    </div>
+                    <div class="col mb-3">
+                      <label for="nameBasic" class="form-label">Jumlah Barang</label>
+                      <input type="text" id="nameBasic" class="form-control" placeholder="" />
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" style="outline: #9CBEE4;" data-bs-dismiss="modal">
+                      Close
+                    </button>
+                    <button type="button" class="btn" style="background-color: #9CBEE4;color: white;">Save</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal fade" id="deleteModalPengajuan" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel1">Hapus Form Pengajuan</h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <div style="margin-top: -20px;">
+                      <hr>
+                      <h5 class="py-4">
+                        Apakah anda yakin untuk menghapus form ini ?
+                      </h5>
+                      <hr>
+                      <div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" style="outline: #9CBEE4;" data-bs-dismiss="modal">
+                      Close
+                    </button>
+                    <button type="button" class="btn btn-danger">Delete</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal Pengajuan -->
             <!-- Footer -->
             <footer class="content-footer footer bg-footer-theme">
               <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
